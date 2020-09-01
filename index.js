@@ -13,8 +13,10 @@ app.get("/",function(req,res){
 app.post("/",function(req,res){
 
   var n1=Number(req.body.weight);
-  var n2=Number(req.body.height);
-  var bmi = (n1/(n2*n2))*703;
+  var n2=Number(req.body.height)/100;
+
+  console.log(n2);
+  var bmi = n1/(n2*n2);
 
   res.send("Your BMI is :" + bmi);
 
